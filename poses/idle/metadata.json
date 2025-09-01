@@ -1,0 +1,10 @@
+{
+  "Name": "Idle Pose",
+  "Category": "pose",
+  "Description": "Default idle pose",
+  "Gender": "Both",
+  "Tags": ["pose", "idle", "default", "neutral", "standing"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}

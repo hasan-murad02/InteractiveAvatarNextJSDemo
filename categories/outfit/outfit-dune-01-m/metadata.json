@@ -1,0 +1,10 @@
+{
+  "Name": "Dune Outfit Male",
+  "Category": "outfit",
+  "Description": "Male Dune Outfit",
+  "Gender": "Male",
+  "Tags": ["dune", "outfit", "desert", "cyberpunk", "futuristic"],
+  "Visibility": true,
+  "Rarity": "Rare",
+  "Quantity": "Unlimited"
+}

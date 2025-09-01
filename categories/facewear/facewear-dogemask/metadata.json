@@ -1,0 +1,10 @@
+{
+  "Name": "Doge Mask",
+  "Category": "facewear",
+  "Description": "Doge meme inspired mask facewear",
+  "Gender": "Neutral",
+  "Tags": ["doge", "meme", "mask", "facewear", "accessory"],
+  "Visibility": true,
+  "Rarity": "Rare",
+  "Quantity": "Unlimited"
+}

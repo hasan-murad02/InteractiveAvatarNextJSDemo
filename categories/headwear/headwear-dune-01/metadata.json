@@ -1,0 +1,10 @@
+{
+  "Name": "Dustveil",
+  "Category": "headwear",
+  "Description": "Dustveil headwear",
+  "Gender": "Neutral",
+  "Tags": ["dustveil", "helmet", "headwear", "accessory", "costume"],
+  "Visibility": true,
+  "Rarity": "Epic",
+  "Quantity": "Unlimited"
+}

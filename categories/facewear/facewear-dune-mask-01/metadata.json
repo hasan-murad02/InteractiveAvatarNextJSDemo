@@ -1,0 +1,10 @@
+{
+  "Name": "Dune Mask 01",
+  "Category": "facewear",
+  "Description": "Dune mask facewear",
+  "Gender": "Neutral",
+  "Tags": ["dune", "mask", "facewear", "accessory", "desert"],
+  "Visibility": true,
+  "Rarity": "Rare",
+  "Quantity": "Unlimited"
+}

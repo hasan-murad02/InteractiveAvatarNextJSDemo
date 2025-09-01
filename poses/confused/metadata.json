@@ -1,0 +1,10 @@
+{
+  "Name": "Confused Pose",
+  "Category": "pose",
+  "Description": "Confused stance pose",
+  "Gender": "Both",
+  "Tags": ["pose", "confused", "static", "stance", "expression"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}

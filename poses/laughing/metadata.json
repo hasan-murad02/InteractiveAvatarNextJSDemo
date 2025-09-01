@@ -1,0 +1,10 @@
+{
+  "Name": "Laughing Pose",
+  "Category": "pose",
+  "Description": "Laughing pose",
+  "Gender": "Both",
+  "Tags": ["pose", "laughing", "happy", "expression", "emotion"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}

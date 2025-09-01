@@ -1,0 +1,10 @@
+{
+  "Name": "Action Pose",
+  "Category": "pose",
+  "Description": "Dynamic action pose",
+  "Gender": "Both",
+  "Tags": ["pose", "action", "dynamic", "stance"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}

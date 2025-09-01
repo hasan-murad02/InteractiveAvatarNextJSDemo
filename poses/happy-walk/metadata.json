@@ -1,0 +1,10 @@
+{
+  "Name": "Happy Walk Pose",
+  "Category": "pose",
+  "Description": "Happy walking pose",
+  "Gender": "Both",
+  "Tags": ["pose", "happy", "walk", "movement", "dynamic"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}

@@ -1,0 +1,10 @@
+{
+  "Name": "Waving Animation",
+  "Category": "animation",
+  "Description": "Avatar waving animation",
+  "Gender": "Both",
+  "Tags": ["greeting", "animation", "social"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}

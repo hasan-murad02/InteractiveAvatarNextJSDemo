@@ -1,0 +1,10 @@
+{
+  "Name": "Ray Gun",
+  "Category": "misc",
+  "Description": "Sci-fi ray gun prop",
+  "Gender": "Neutral",
+  "Tags": ["ray gun", "weapon", "prop", "sci-fi", "accessory"],
+  "Visibility": true,
+  "Rarity": "Rare",
+  "Quantity": "Unlimited"
+}

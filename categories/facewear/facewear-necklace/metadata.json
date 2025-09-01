@@ -1,0 +1,10 @@
+{
+  "Name": "Necklace",
+  "Category": "facewear",
+  "Description": "Necklace accessory",
+  "Gender": "Neutral",
+  "Tags": ["necklace", "jewelry", "accessory", "fashion"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}

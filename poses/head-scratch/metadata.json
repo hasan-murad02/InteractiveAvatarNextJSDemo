@@ -1,0 +1,10 @@
+{
+  "Name": "Head Scratch Pose",
+  "Category": "pose",
+  "Description": "Head scratching pose",
+  "Gender": "Both",
+  "Tags": ["pose", "head scratch", "thinking", "confused", "expression"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}

@@ -1,0 +1,10 @@
+{
+  "Name": "Cyberpunk Helmet",
+  "Category": "headwear",
+  "Description": "Cyberpunk helmet headwear",
+  "Gender": "Neutral",
+  "Tags": ["cyberpunk", "helmet", "headwear", "accessory", "costume"],
+  "Visibility": true,
+  "Rarity": "Epic",
+  "Quantity": "Unlimited"
+}

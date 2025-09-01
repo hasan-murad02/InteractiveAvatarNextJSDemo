@@ -1,0 +1,10 @@
+{
+  "Name": "Fight Pose",
+  "Category": "pose",
+  "Description": "Fighting stance pose",
+  "Gender": "Both",
+  "Tags": ["pose", "fight", "action", "stance", "combat"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}

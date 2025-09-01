@@ -4,11 +4,11 @@ on:
   push:
     branches: [ main, develop ]
     paths:
-      - 'components/**'
+      - 'categories/**'
   pull_request:
     branches: [ main ]
     paths:
-      - 'components/**'
+      - 'categories/**'
 
 jobs:
   detect-changes-and-call-api:

@@ -1,0 +1,10 @@
+{
+  "Name": "Cyberpunk Mask 01",
+  "Category": "facewear",
+  "Description": "Cyberpunk mask facewear",
+  "Gender": "Neutral",
+  "Tags": ["cyberpunk", "mask", "facewear", "accessory", "futuristic"],
+  "Visibility": true,
+  "Rarity": "Rare",
+  "Quantity": "Unlimited"
+}

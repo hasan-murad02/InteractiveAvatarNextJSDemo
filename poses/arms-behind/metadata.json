@@ -1,0 +1,10 @@
+{
+  "Name": "Arms Behind Pose",
+  "Category": "pose",
+  "Description": "Avatar pose with arms behind back",
+  "Gender": "Both",
+  "Tags": ["pose", "arms behind", "static", "stance"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}

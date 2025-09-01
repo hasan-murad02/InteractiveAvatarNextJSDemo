@@ -1,0 +1,10 @@
+{
+  "Name": "Viking Helmet",
+  "Category": "headwear",
+  "Description": "Viking helmet headwear",
+  "Gender": "Neutral",
+  "Tags": ["viking", "helmet", "headwear", "accessory", "costume"],
+  "Visibility": true,
+  "Rarity": "Uncommon",
+  "Quantity": "Unlimited"
+}

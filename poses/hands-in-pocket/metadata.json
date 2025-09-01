@@ -1,0 +1,10 @@
+{
+  "Name": "Hands in Pocket Pose",
+  "Category": "pose",
+  "Description": "Casual pose with hands in pockets",
+  "Gender": "Both",
+  "Tags": ["pose", "casual", "hands in pocket", "stance", "relaxed"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}

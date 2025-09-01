@@ -1,0 +1,10 @@
+{
+  "Name": "Boss Glasses",
+  "Category": "glasses",
+  "Description": "Stylish boss-styled glasses",
+  "Gender": "Neutral",
+  "Tags": ["glasses", "boss", "accessory", "fashion", "eyewear"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}

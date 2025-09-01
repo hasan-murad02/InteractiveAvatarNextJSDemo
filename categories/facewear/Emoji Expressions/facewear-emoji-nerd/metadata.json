@@ -1,0 +1,10 @@
+{
+  "Name": "Nerd Emoji Facewear",
+  "Category": "facewear",
+  "Description": "Nerd emoji facewear accessory",
+  "Gender": "Neutral",
+  "Tags": ["emoji", "nerd", "geek", "facewear", "accessory"],
+  "Visibility": true,
+  "Rarity": "Uncommon",
+  "Quantity": "Unlimited"
+}

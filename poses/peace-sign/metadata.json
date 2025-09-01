@@ -1,0 +1,10 @@
+{
+  "Name": "Peace Sign Pose",
+  "Category": "pose",
+  "Description": "Peace sign hand gesture pose",
+  "Gender": "Both",
+  "Tags": ["pose", "peace sign", "gesture", "hand", "friendly"],
+  "Visibility": true,
+  "Rarity": "Common",
+  "Quantity": "Unlimited"
+}
