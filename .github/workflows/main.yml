@@ -1,0 +1,77 @@
+name: Detect Categories Changes and Call API
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'components/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'components/**'
+
+jobs:
+  detect-changes-and-call-api:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1 
+    
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v41
+      with:
+        files: components/**
+        dir_names: true
+        dir_names_max_depth: 2
+    
+    - name: Process changed categories and call API
+      if: steps.changed-files.outputs.any_changed == 'true'
+      env:
+        API_ENDPOINT: ${{ secrets.API_ENDPOINT }}
+        API_KEY: ${{ secrets.API_KEY }}
+      run: |
+        echo "Changed directories: ${{ steps.changed-files.outputs.all_changed_files }}"
+        
+        # Process each changed directory
+        for dir in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          echo "Processing directory: $dir"
+          
+          # Extract category folder name (assumes structure: categories/folder-name/...)
+          category_folder=$(echo "$dir" | cut -d'/' -f2)
+          
+          echo "Category folder: $category_folder"
+          
+          # Call API with the category folder name
+          response=$(curl -s -w "\n%{http_code}" \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $API_KEY" \
+            -d "{\"category\": \"$category_folder\", \"action\": \"updated\", \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" \
+            "$API_ENDPOINT")
+          
+          # Extract response body and status code
+          http_code=$(echo "$response" | tail -n1)
+          response_body=$(echo "$response" | head -n -1)
+          
+          echo "API Response Code: $http_code"
+          echo "API Response Body: $response_body"
+          
+          # Check if API call was successful
+          if [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
+            echo "✅ Successfully called API for category: $category_folder"
+          else
+            echo "❌ Failed to call API for category: $category_folder"
+            echo "Response: $response_body"
+            exit 1
+          fi
+        done
+
+    - name: Summary
+      if: steps.changed-files.outputs.any_changed == 'true'
+      run: |
+        echo "🎉 Processed all category changes successfully!"
+        echo "Changed categories: ${{ steps.changed-files.outputs.all_changed_files }}"

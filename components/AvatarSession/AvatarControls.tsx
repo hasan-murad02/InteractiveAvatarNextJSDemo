@@ -6,7 +6,6 @@ import { Button } from "../Button";
 import { useInterrupt } from "../logic/useInterrupt";
 
 import { AudioInput } from "./AudioInput";
-import { TextInput } from "./TextInput";
 
 export const AvatarControls: React.FC = () => {
   const {
@@ -49,7 +48,7 @@ export const AvatarControls: React.FC = () => {
           Text Chat
         </ToggleGroupItem>
       </ToggleGroup>
-      {isVoiceChatActive || isVoiceChatLoading ? <AudioInput /> : <TextInput />}
+      {isVoiceChatActive || isVoiceChatLoading ? <AudioInput /> : <></>}
       <div className="absolute top-[-70px] right-3">
         <Button className="!bg-zinc-700 !text-white" onClick={interrupt}>
           Interrupt

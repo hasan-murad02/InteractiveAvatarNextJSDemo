@@ -21,15 +21,14 @@ import { LoadingIcon } from "./Icons";
 import { MessageHistory } from "./AvatarSession/MessageHistory";
 
 import { AVATARS } from "@/app/lib/constants";
+import { useTextChat } from "./logic/useTextChat";
 
 const DEFAULT_CONFIG: StartAvatarRequest = {
-  quality: AvatarQuality.Low,
+  quality: AvatarQuality.High,
   avatarName: AVATARS[0].avatar_id,
   knowledgeId: undefined,
   voice: {
-    rate: 1.5,
-    emotion: VoiceEmotion.EXCITED,
-    model: ElevenLabsModel.eleven_flash_v2_5,
+    voiceId: "1a12f260630947bfb602186b773badd8",
   },
   language: "en",
   voiceChatTransport: VoiceChatTransport.WEBSOCKET,
@@ -42,6 +41,10 @@ function InteractiveAvatar() {
   const { initAvatar, startAvatar, stopAvatar, sessionState, stream } =
     useStreamingAvatarSession();
   const { startVoiceChat } = useVoiceChat();
+  const { repeatMessage } =
+    useTextChat();
+  const [nextScript, setNextScript] = useState<string[]>([]);
+  const isProcessingRef = useRef(false);  
 
   const [config, setConfig] = useState<StartAvatarRequest>(DEFAULT_CONFIG);
 
@@ -63,6 +66,23 @@ function InteractiveAvatar() {
     }
   }
 
+  const getNextScript = async () => {
+    try {
+      const res = await fetch("http://localhost:5053/nextScript");
+      const data = await res.json();
+  
+      // Always store scripts as an array of strings
+      setNextScript((prev) => [...prev, data.nextScript]);
+  
+      console.log("nextScript has been updated with: ", data.nextScript);
+    } catch (err) {
+      console.error("Error fetching next script:", err);
+    }
+  };
+  
+  
+
+
   const startSessionV2 = useMemoizedFn(async (isVoiceChat: boolean) => {
     try {
       const newToken = await fetchAccessToken();
@@ -73,12 +93,31 @@ function InteractiveAvatar() {
       });
       avatar.on(StreamingEvents.AVATAR_STOP_TALKING, (e) => {
         console.log("Avatar stopped talking", e);
+    
+        // Prevent duplicate runs
+        if (isProcessingRef.current) return;
+        isProcessingRef.current = true;
+
+        if (nextScript.length === 0) {
+          isProcessingRef.current = false;
+        }
+  
+        // Play the first script
+        repeatMessage(nextScript[0])?.finally(() => {
+          isProcessingRef.current = false;
+          getNextScript(); // fetch next after finishing
+        });
+    
+        setNextScript((prev) => prev.slice(1));
       });
       avatar.on(StreamingEvents.STREAM_DISCONNECTED, () => {
         console.log("Stream disconnected");
       });
       avatar.on(StreamingEvents.STREAM_READY, (event) => {
         console.log(">>>>> Stream ready:", event.detail);
+        let scriptToSend = `Well hey there, beautiful people! Welcome back to another session where we dive deep into the questions that matter to you. I'm your host, and there's nothing quite like that moment when we go live and I know you're all out there, ready to explore some fascinating topics together. This isn't just another stream, folks. This is our space – a place where curiosity meets conversation, where your questions become the foundatihave another incredible session together. So settle in, get comfortable, and let's begin this journey of discovery. Here we go...`;
+        repeatMessage(scriptToSend);
+        getNextScript();
       });
       avatar.on(StreamingEvents.USER_START, (event) => {
         console.log(">>>>> User started talking:", event);
